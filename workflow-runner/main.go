@@ -32,12 +32,12 @@ func main() {
 		log.Fatalf("Error finding workflow: %v", err)
 	}
 
-	fmt.Printf("Got wfMoid: %s\n", wf.GetMoid())
+	fmt.Printf("Got workflow Moid: %s\n", wf.GetMoid())
 
 	err = wfClient.ExecuteWorkflow(wf, map[string]interface{}{})
 	if err != nil {
 		log.Fatalf("Error executing workflow: %v", err)
 	}
 
-	log.Print("Success")
+	fmt.Println("Workflow successfully started ...")
 }

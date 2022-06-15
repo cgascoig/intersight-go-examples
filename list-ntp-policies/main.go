@@ -51,12 +51,12 @@ func main() {
 	}
 
 	getNtpPolicyListRequest := intersightClient.NtpApi.GetNtpPolicyList(intersightAuthCtx)
-	ntpResult, httpResult, err := getNtpPolicyListRequest.Execute()
+	ntpResult, _, err := getNtpPolicyListRequest.Execute()
 	if err != nil {
 		log.Fatalf("Error making Intersight API call: %v", err)
 	}
 
-	log.Print("HTTP Response: %v", httpResult)
+	// log.Print("HTTP Response: %v", httpResult)
 
 	for _, ntpPolicy := range ntpResult.NtpPolicyList.Results {
 		fmt.Printf("NTP Policy: Name=%v Enabled=%v NtpServers=%v\n", *ntpPolicy.Name, *ntpPolicy.Enabled, ntpPolicy.NtpServers)
