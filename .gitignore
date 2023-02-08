@@ -1,3 +1,6 @@
 alarm-streamer/alarm-streamer
 list-ntp-policies/list-ntp-policies
 workflow-runner/workflow-runner
+build/list-ntp-policies
+build/alarm-streamer
+build/workflow-runner
